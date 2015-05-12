@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="resources"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/ext-lib/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/ext-lib/jsp-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/ext-lib/mysql-connector-java-5.1.18-bin.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/ext-lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/ext-lib/tomcat-dbcp.jar"/>
+	<classpathentry kind="lib" path="WebContent/WEB-INF/ext-lib/tomcat-jdbc.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="build"/>
+</classpath>
