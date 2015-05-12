@@ -11,4 +11,4 @@ create table block_panchayat(block_code bigint references block(block_code),panc
 create table district_block(district_code bigint references district(district_code), block_code bigint references block(block_code));
 create table panchayat_village(panchayat_code bigint references panchayat(panchayat_code), village_code bigint references village(village_code));
 create table state_district(state_code bigint references state(state_code), district_code bigint references district(district_code));
-create table gateInfo(village_code bigint references village(village_code), open_date datetime, close_date datetime);
+create table gateInfo(id bigint,village_code bigint references village(village_code), open_date datetime, close_date datetime);
