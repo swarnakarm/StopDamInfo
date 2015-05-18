@@ -6,13 +6,12 @@ import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
+import com.daminfo.common.json.Location;
 import com.daminfo.common.util.AppLogger;
 import com.daminfo.dao.StateDAO;
 import com.daminfo.model.State;
-import com.daminfo.service.common.Location;
 @Repository
 public class StateDAOImpl implements StateDAO{
 
@@ -30,8 +29,6 @@ public class StateDAOImpl implements StateDAO{
 		List<State> results = query.list();
 		for (State state: results){
 			AppLogger.getLogger().debug(state.getStateName() +" - "+state.getStateCode()); 
-//			System.out.print("State Name: " + state.getStateName()); 
-//		    System.out.print("State Code: " + state.getStateCode()); 
 		     Location loc = new Location(state);
 		     stateList.add(loc);
 		}

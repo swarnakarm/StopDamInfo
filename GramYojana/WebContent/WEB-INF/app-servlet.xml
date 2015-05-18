@@ -8,8 +8,12 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
  	
- 	<context:component-scan base-package="com.daminfo.app.controller" />
+ 	<!-- context:component-scan base-package="com.daminfo.controller" /-->
 	<annotation-driven />
+	<beans:bean class="com.daminfo.controller.AppController">
+		<beans:property name="locationService" ref="locationService" />
+		<beans:property name="gateInfoService" ref="gateInfoService" />
+	</beans:bean>
 	 	
  	<beans:bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"></beans:bean>
 	<beans:bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
@@ -77,6 +81,7 @@
 	
     <beans:bean id="gateInfoService" class="com.daminfo.service.impl.GateInfoServiceImpl">
         <beans:property name="gateDAO" ref="gateDAO"></beans:property>
+        <beans:property name="villageDAO" ref="villageDAO"></beans:property>
     </beans:bean>
 		
 	<tx:annotation-driven transaction-manager="transactionManager"/>

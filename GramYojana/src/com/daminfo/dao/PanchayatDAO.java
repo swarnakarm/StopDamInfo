@@ -2,12 +2,12 @@ package com.daminfo.dao;
 
 import java.util.List;
 
+import com.daminfo.common.json.Location;
 import com.daminfo.model.Panchayat;
-import com.daminfo.service.common.Location;
 
 public interface PanchayatDAO {
 
-	List<Location> getAllPanchayatsByBlockID(int blockCode);
-	Panchayat getPanchayatInfo(int panchayatCode);
+	List<Location> getAllPanchayatsByBlockID(long blockCode);
+	Panchayat getPanchayatInfo(long panchayatCode);
 	
 }

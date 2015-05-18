@@ -8,7 +8,8 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
  	
-	 	<context:component-scan base-package="com.daminfo.mvc.controller" />
+	 	<!-- context:component-scan base-package="com.daminfo.controller" /-->
+	 	<beans:bean class="com.daminfo.controller.ViewController" />
 		<annotation-driven />
 		
 		<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  

@@ -2,10 +2,10 @@ package com.daminfo.dao;
 
 import java.util.List;
 
+import com.daminfo.common.json.Location;
 import com.daminfo.model.District;
-import com.daminfo.service.common.Location;
 
 public interface DistrictDAO {
-	List<Location> getAllDistrictsByStateID(int stateCode);
-	District getDistrictInfo(int districtCode);
+	List<Location> getAllDistrictsByStateID(long stateCode);
+	District getDistrictInfo(long districtCode);
 }

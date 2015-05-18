@@ -9,10 +9,10 @@ import org.hibernate.SessionFactory;
 //import org.slf4j.Logger;
 import org.springframework.stereotype.Repository;
 
+import com.daminfo.common.json.Location;
 import com.daminfo.dao.BlockDAO;
 import com.daminfo.model.Block;
 import com.daminfo.model.District;
-import com.daminfo.service.common.Location;
 
 @Repository
 public class BlockDAOImpl implements BlockDAO{
@@ -27,7 +27,7 @@ public class BlockDAOImpl implements BlockDAO{
 	
 	
 	@Override
-	public List<Location> getAllBlocksByDistrictID(int districtCode) {
+	public List<Location> getAllBlocksByDistrictID(long districtCode) {
 		ArrayList<Location> blockList =  new ArrayList<Location>();
 		Session session = sessionFactory.getCurrentSession();
 		District district = (District) session.load(District.class, new Long(districtCode));
@@ -40,10 +40,9 @@ public class BlockDAOImpl implements BlockDAO{
 	}
 
 	@Override
-	public Block getBlockInfo(int blockCode) {
+	public Block getBlockInfo(long blockCode) {
 		Session session = this.sessionFactory.getCurrentSession();      
         Block block = (Block) session.load(Block.class, new Long(blockCode));
-//        logger.info("Person loaded successfully, Person details="+p);
         return block;
 	}
 

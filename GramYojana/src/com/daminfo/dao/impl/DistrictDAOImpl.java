@@ -8,11 +8,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
+import com.daminfo.common.json.Location;
 import com.daminfo.dao.DistrictDAO;
 import com.daminfo.model.Block;
 import com.daminfo.model.District;
 import com.daminfo.model.State;
-import com.daminfo.service.common.Location;
 @Repository
 public class DistrictDAOImpl implements DistrictDAO{
 
@@ -23,7 +23,7 @@ public class DistrictDAOImpl implements DistrictDAO{
     }
 		
 	@Override
-	public List<Location> getAllDistrictsByStateID(int stateCode) {
+	public List<Location> getAllDistrictsByStateID(long stateCode) {
 		ArrayList<Location> districtList =  new ArrayList<Location>();
 		Session session = sessionFactory.getCurrentSession();
 		State state = (State) session.load(State.class, new Long(stateCode));
@@ -36,9 +36,9 @@ public class DistrictDAOImpl implements DistrictDAO{
 	}
 
 	@Override
-	public District getDistrictInfo(int districtCode) {
+	public District getDistrictInfo(long districtCode) {
 		Session session = this.sessionFactory.getCurrentSession();      
-		District district = (District) session.load(Block.class, new Integer(districtCode));
+		District district = (District) session.load(Block.class, new Long(districtCode));
 		return district;
 	}
 

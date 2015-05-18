@@ -8,10 +8,10 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.stereotype.Repository;
 
+import com.daminfo.common.json.Location;
 import com.daminfo.dao.PanchayatDAO;
 import com.daminfo.model.Block;
 import com.daminfo.model.Panchayat;
-import com.daminfo.service.common.Location;
 @Repository
 public class PanchayatDAOImpl implements PanchayatDAO {
 
@@ -22,7 +22,7 @@ public class PanchayatDAOImpl implements PanchayatDAO {
     }
     
 	@Override
-	public List<Location> getAllPanchayatsByBlockID(int blockCode) {
+	public List<Location> getAllPanchayatsByBlockID(long blockCode) {
 		ArrayList<Location> blockList =  new ArrayList<Location>();
 		Session session = sessionFactory.getCurrentSession();
 		Block block = (Block) session.load(Block.class, new Long(blockCode));
@@ -35,9 +35,9 @@ public class PanchayatDAOImpl implements PanchayatDAO {
 	}
 
 	@Override
-	public Panchayat getPanchayatInfo(int panchayatCode) {
+	public Panchayat getPanchayatInfo(long panchayatCode) {
 		Session session = this.sessionFactory.getCurrentSession();      
-		Panchayat panchayat = (Panchayat) session.load(Panchayat.class, new Integer(panchayatCode));
+		Panchayat panchayat = (Panchayat) session.load(Panchayat.class, new Long(panchayatCode));
 		return panchayat;
 	}
 

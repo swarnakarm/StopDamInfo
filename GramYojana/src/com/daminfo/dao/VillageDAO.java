@@ -2,10 +2,10 @@ package com.daminfo.dao;
 
 import java.util.List;
 
+import com.daminfo.common.json.Location;
 import com.daminfo.model.Village;
-import com.daminfo.service.common.Location;
 
 public interface VillageDAO {
-	List<Location> getAllVillagesByPanchayatID(int panchayatCode);
-	Village getVillageInfo(int villageCode);
+	List<Location> getAllVillagesByPanchayatID(long panchayatCode);
+	Village getVillageInfo(long villageCode);
 }

@@ -6,7 +6,7 @@
 	<display-name>DAM GATES</display-name>
 	
 	<welcome-file-list>
-		<welcome-file>/views/home</welcome-file>
+		<welcome-file>/login.jsp</welcome-file>
 	</welcome-file-list>
 	
 	<servlet>
@@ -27,6 +27,26 @@
 	<servlet-mapping>
 		<servlet-name>app</servlet-name>
 		<url-pattern>/app/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>gateInfo</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>gateInfo</servlet-name>
+		<url-pattern>/gateInfo/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>report</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>report</servlet-name>
+		<url-pattern>/report/*</url-pattern>
 	</servlet-mapping>
 	
 	<listener>
